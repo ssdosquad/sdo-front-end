@@ -1,0 +1,77 @@
+.startTest header {
+    height: 30px;
+    background: #fff;
+}
+
+.startTest header .fullNamePar {
+    font-size: 20px;
+    width: -webkit-max-content;
+    width: max-content;
+    margin: auto;
+    color: #000;
+    font-family: NotoSansJP-Bold;
+}
+
+.startTest .startTestInfo {
+    width: 26%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 15px;
+    margin-right: 20px;
+    border: 2px solid #ccc;
+    border-radius: 0 20px 20px 0;
+    font-family: Roboto-Light;
+    font-size: 18px;
+}
+
+.startTest .startTestInfo p {
+    margin: 0;
+}
+
+.startTest .startTestInfo button {
+    width: -webkit-max-content;
+    width: max-content;
+    margin: auto;
+    margin-top: 10px;
+    padding: 7px 15px;
+    background: #04BF10;
+    color: #fff;
+    border: 0;
+    border-radius: 20px;
+    font-family: Roboto-Light;
+    font-size: 18px;
+}
+
+.startTest .startTestContent {
+    margin: 20px 20px 0 30%;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.startTest .startTestContent .startTestItem {
+    margin-bottom: 20px;
+}
+
+.startTest .startTestContent .startTestItem .task {
+    border: 2px solid #05AFF2;
+    margin: 20px 0;
+    padding: 10px 10px 10px 40%;
+}
+
+.startTest .startTestContent .startTestItem .contentTask {
+    font-size: 20px;
+    font-family: NotoSansJP-Bold;
+}
+
+.startTest .startTestContent .startTestItem label {
+    font-family: NotoSansJP-Bold;
+    font-size: 18px;
+}
+
+.startTest .startTestContent .startTestItem:last-child {
+    margin-bottom: 0;
+}

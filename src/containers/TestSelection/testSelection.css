@@ -1,0 +1,46 @@
+.testSelection .Header a {
+  margin: auto 10px;
+  padding: 5px 10px;
+  font-size: 20px;
+  font-family: NotoSansJP-Bold;
+  border: 0;
+  border-radius: 20px;
+  background: #05AFF2;
+  color: #fff;
+}
+
+.testSelection .testSelectionContent {
+  width: 80%;
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 30px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.testSelection .testSelectionContent .testSelectionItem {
+  background: #F28705;
+  font-family: NotoSansJP-Bold;
+  width: -webkit-max-content;
+  width: max-content;
+  padding: 10px;
+  border: 0;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.testSelection .testSelectionContent .testSelectionItem a {
+  color: #fff;
+}
+
+.testSelection .testSelectionContent .testSelectionItem:hover {
+  background: #F29F05;
+}
+
+.testSelection .testSelectionContent .testSelectionItem span {
+  margin-left: 20px;
+  float: right;
+}
