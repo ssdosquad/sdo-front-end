@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 import './test.css'
 import Header from '../Header/Header'
+import {connect} from 'react-redux'
 
 class test extends Component {
     render() {
         return (
             <div className="startTest">
-                <Header />
+                <Header
+                    name={this.props.name}
+                    group={this.props.group}
+                />
                 <form>
                     <div className="startTestInfo">
                         <p>Название модуля: <span>Арифметические действия</span></p>
@@ -84,4 +88,11 @@ class test extends Component {
     }
 }
 
-export default test
+function mapStateToProps(state) {
+    return {
+        name: state.name,
+        group: state.group
+    }
+}
+
+export default connect(mapStateToProps)(test)

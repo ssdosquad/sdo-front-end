@@ -28,6 +28,10 @@
     margin-bottom: 10px;
 }
 
+.loginForTest form #fullName {
+    display: none;
+}
+
 .loginForTest form button {
     background: #04BF10;
     border: 0;
@@ -38,4 +42,5 @@
     font-size: 25px;
     padding: 0 30px;
     cursor: pointer;
+    display: none;
 }

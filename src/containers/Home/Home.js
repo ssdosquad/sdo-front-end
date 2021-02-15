@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-// import { NavLink } from 'react-router-dom';
+import {connect} from 'react-redux'
+import { Link } from 'react-router-dom';
 import './Home.css'
 
-let fullName = document.getElementById('fullName')
 
 class Home extends Component {
     state = {
@@ -18,23 +18,35 @@ class Home extends Component {
             {name: 'Иванов Иван Иванович'},
             {name: 'Алексеев Алексей Алексеевич'},
             {name: 'Дмитриев Дмитрий Дмитриевич'}
-        ]
+        ],
+        activAccount: []
     }
 
     render() {
+        console.log('Имя: ' + this.props.name, 'Группа: ' + this.props.group);
+        function groupChangeHandler(e) {
+            console.log(e.target.value);
+            document.querySelector('#fullName').style.display = 'block'
+        }
+
+        function nameChangeHandler(e) {
+            console.log(e.target.value);
+            document.querySelector('button').style.display = 'block'
+        }
+
         return (
             <div className={'loginForTest'}>
-                <form id="form">
-                    <select name="" id="groupName">
-                        <option value="1" disabled="disabled">Выберите свой класс</option>
+                <form id="form" >
+                    <select name="" id="groupName" defaultValue={'DEFAULT'} onChange={groupChangeHandler}>
+                        <option value='DEFAULT'  disabled="disabled">Выберите свой класс</option>
                         {this.state.groupName.map((group, index) => {
                             return (
                                 <option value={group.id} key={index}>{group.name}</option>
                             )
                         })}
                     </select>
-                    <select name="" id="fullName">
-                        <option value="0" disabled="disabled">Выберите ФИО</option>
+                    <select name="" id="fullName" defaultValue={'DEFAULT'} onChange={nameChangeHandler}>
+                        <option value='DEFAULT' disabled="disabled">Выберите ФИО</option>
                         {this.state.fullName.map((fullname, index) => {
                             return (
                                 <option value={fullname.name} key={index}>{fullname.name}</option>
@@ -42,11 +54,26 @@ class Home extends Component {
                         })}
                     </select>
                     {/* <NavLink onClick={console.log('dasda')} to="/testSelection">Войти</NavLink> */}
-                    <button>Войти</button>
+                    <Link to='/testSelection'><button onClick={() => this.props.onAddName(document.querySelector('#fullName').value, document.querySelector('#groupName').value)}>Войти</button></Link>
+
                 </form>
             </div>
         )
     }
 }
 
-export default Home
+
+function mapStateToProps(state) {
+    return {
+        name: state.name,
+        group: state.group
+    }
+}
+
+function mapDispathToProps(dispatch) {
+    return {
+        onAddName: (name, group) => dispatch({type: 'ADDNAME', name: name, group: group})
+    }
+}
+
+export default connect(mapStateToProps, mapDispathToProps)(Home)
