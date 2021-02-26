@@ -1,33 +1,52 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
-import {connect} from 'react-redux'
-import Header from '../Header/Header'
+import { Link } from 'react-router-dom'
+import Header from '../../components/Header/Header'
 import './testSelection.css'
+import Loader from '../../components/Loader/Loader'
 
 class testSelection extends Component {
+
+    state = {
+        name: '',
+        group: '',
+        loading: false,
+        tests: [
+            {
+                subjectName: 'Математика',
+                testName: 'Уравнение',
+                timeToComplete: '10'
+            },
+            {
+                subjectName: 'Математика',
+                testName: 'Уравнение',
+                timeToComplete: '10'
+            }
+        ],
+    }
     render() {
         return (
             <React.Fragment>
                 <div className="testSelection">
                     <Header
-                        name={this.props.name}
-                        group={this.props.group}
+                        name={this.state.name}
+                        group={this.state.group}
                     />
                     <div className="testSelectionContent">
-                    <div className="testSelectionItem">
-                        <NavLink to="/test">
-                            <p>Название предмета: <span>Математика</span></p>
-                            <p>Название теста: <span>Уравнение</span></p>
-                            <p>Время на выполнение: <span>45 минут</span></p>
-                        </NavLink>
-                        </div>
-                        <div className="testSelectionItem">
-                        <NavLink to="/test">
-                            <p>Название предмета: <span>Математика</span></p>
-                            <p>Название теста: <span>Уравнение</span></p>
-                            <p>Время на выполнение: <span>45 минут</span></p>
-                        </NavLink>
-                        </div>
+                        {
+                            this.state.loading
+                            ? <Loader />
+                            :   this.state.tests.map((quiz, index) => {
+                                    return (
+                                        <div className="testSelectionItem" key={index++}>
+                                            <Link to="/test" key={index++}>
+                                                <p key={index++}>Название предмета: <span className='spanInfo' key={index++}>{quiz.subjectName}</span></p>
+                                                <p key={index++}>Название теста: <span className='spanInfo' key={index++}>{quiz.testName}</span></p>
+                                                <p key={index++}>Время на выполнение: <span className='spanInfo' key={index++}><span id='time' key={index++}>{quiz.timeToComplete}</span> минут</span></p>
+                                            </Link>
+                                        </div>
+                                    )
+                                })
+                        }
                     </div>
                 </div>
             </React.Fragment>
@@ -35,11 +54,4 @@ class testSelection extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        name: state.name,
-        group: state.group
-    }
-}
-
-export default connect(mapStateToProps)(testSelection)
+export default testSelection

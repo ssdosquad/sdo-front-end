@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import {connect} from 'react-redux'
 import { Link } from 'react-router-dom';
 import './Home.css'
 
@@ -23,7 +22,7 @@ class Home extends Component {
     }
 
     render() {
-        console.log('Имя: ' + this.props.name, 'Группа: ' + this.props.group);
+        // console.log('Имя: ' + this.props.name, 'Группа: ' + this.props.group, 'время таймера: ' + this.props.timer);
         function groupChangeHandler(e) {
             console.log(e.target.value);
             document.querySelector('#fullName').style.display = 'block'
@@ -41,7 +40,7 @@ class Home extends Component {
                         <option value='DEFAULT'  disabled="disabled">Выберите свой класс</option>
                         {this.state.groupName.map((group, index) => {
                             return (
-                                <option value={group.id} key={index}>{group.name}</option>
+                                <option value={group.name}  key={index}>{group.name}</option>
                             )
                         })}
                     </select>
@@ -54,7 +53,7 @@ class Home extends Component {
                         })}
                     </select>
                     {/* <NavLink onClick={console.log('dasda')} to="/testSelection">Войти</NavLink> */}
-                    <Link to='/testSelection'><button onClick={() => this.props.onAddName(document.querySelector('#fullName').value, document.querySelector('#groupName').value)}>Войти</button></Link>
+                    <Link to='/testSelection'><button>Войти</button></Link>
 
                 </form>
             </div>
@@ -63,17 +62,4 @@ class Home extends Component {
 }
 
 
-function mapStateToProps(state) {
-    return {
-        name: state.name,
-        group: state.group
-    }
-}
-
-function mapDispathToProps(dispatch) {
-    return {
-        onAddName: (name, group) => dispatch({type: 'ADDNAME', name: name, group: group})
-    }
-}
-
-export default connect(mapStateToProps, mapDispathToProps)(Home)
+export default Home

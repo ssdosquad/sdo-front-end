@@ -18,14 +18,11 @@
   margin-top: 30px;
   padding: 20px;
   display: grid;
-  grid-template-columns: auto auto auto auto;
 }
 
 .testSelection .testSelectionContent .testSelectionItem {
   background: #F28705;
   font-family: NotoSansJP-Bold;
-  width: -webkit-max-content;
-  width: max-content;
   padding: 10px;
   border: 0;
   border-radius: 20px;
@@ -36,11 +33,16 @@
   color: #fff;
 }
 
+.testSelection .testSelectionContent .testSelectionItem a p {
+  margin: 10px;
+  font-size: 25px;
+}
+
 .testSelection .testSelectionContent .testSelectionItem:hover {
   background: #F29F05;
 }
 
-.testSelection .testSelectionContent .testSelectionItem span {
+.testSelection .testSelectionContent .testSelectionItem .spanInfo {
   margin-left: 20px;
   float: right;
 }

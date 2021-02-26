@@ -1,15 +1,12 @@
-.Home {}
-
-.loginForTest {
-    min-height: 100%;
+.Auth {
     display: flex;
     justify-content: center;
+    margin: auto;
 }
 
-.loginForTest form {
+.Auth form {
     display: flex;
     flex-direction: column;
-    width: 60%;
     margin: auto;
     padding: 20px;
     border: 2px solid #ccc;
@@ -17,7 +14,7 @@
     background: #fff;
 }
 
-.loginForTest form select {
+.Auth form input {
     background: #F25C05;
     color: #fff;
     border: 2px solid #ccc;
@@ -25,14 +22,15 @@
     padding: 10px 15px;
     font-size: 18px;
     cursor: pointer;
+    margin-bottom: 10px;
+    width: 300px;
 }
 
-.loginForTest form #fullName {
-    display: none;
-    margin-top: 10px;
+.Auth form a {
+    margin: auto;
 }
 
-.loginForTest form button {
+.Auth form a button {
     background: #04BF10;
     border: 0;
     border-radius: 20px;
@@ -42,6 +40,4 @@
     font-size: 25px;
     padding: 0 30px;
     cursor: pointer;
-    display: none;
-    margin-top: 10px;
 }
