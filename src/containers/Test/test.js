@@ -12,7 +12,7 @@ class test extends Component {
         subjectName: 'Математика',
         testName: 'Уравнение',
         timeToComplete: '10',
-        numberOfQuestions: '2',
+        numberOfQuestions: '6',
         loader: false,
         questions: [
             {
@@ -96,7 +96,7 @@ class test extends Component {
     componentDidMount= function(){
         var tests = document.querySelectorAll('.startTestItem')
 
-        if (tests.length >= this.state.numberOfQuestions){
+        if (tests.length <= this.state.numberOfQuestions){
             console.log('Успешно');
             setTimeout(() => {
                 this.setState({loader: true})

@@ -1,3 +1,16 @@
 .Panel{
-    
+    height: max-content;
+    margin: auto;
+    /* margin-left: 97px; */
+    padding: 10px;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: min-content;
+}
+
+.Panel h1 {
+    width: max-content;
+    margin: 0;
+    padding: 10px;
 }

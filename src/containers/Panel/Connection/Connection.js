@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Menu from '../../components/menu/menu'
+import Menu from '../../../components/menu/menu'
 import './Connection.css'
 
 class Connection extends Component {

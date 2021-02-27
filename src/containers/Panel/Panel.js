@@ -8,7 +8,7 @@ class Panel extends Component {
             <React.Fragment>
                 <Menu/>
                 <div className={classes.Panel}>
-                    <h1>dad</h1>
+                    <h1>Выберите пункт в меню</h1>
                 </div>
             </React.Fragment>
         )

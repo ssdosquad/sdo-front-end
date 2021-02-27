@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './menu.css'
-import communication from './communication.png'
-import training from './training.png'
-import checklist from './checklist.png'
-import shipping from './shipping.png'
+import communication from './dvr-24px.svg'
+import training from './leaderboard-black-18dp.svg'
+import checklist from './find_in_page-black-18dp.svg'
+import shipping from './sim_card_download-black-18dp.svg'
 
 class Menu extends Component {
     render() {
@@ -16,15 +16,15 @@ class Menu extends Component {
                         <p>Подключенные устройства</p>
                     </ul>
                     <ul>
-                        <Link to=""><img src={training} alt="модуль" title="Выбор модуля" /></Link>
+                        <Link to="/panel/module"><img src={training} alt="модуль" title="Выбор модуля" /></Link>
                         <p>Выбор модуля</p>
                     </ul>
                     <ul>
-                        <Link to=""><img src={checklist} alt="Просмотр результатов" title="Просмотр результатов" /></Link>
+                        <Link to="/panel/events"><img src={checklist} alt="Просмотр результатов" title="Просмотр результатов" /></Link>
                         <p>Просмотр результатов</p>
                     </ul>
                     <ul>
-                        <Link to=""><img src={shipping} alt="Импорт оценок" title="Импорт оценок" /></Link>
+                        <Link to="/panel/import"><img src={shipping} alt="Импорт оценок" title="Импорт оценок" /></Link>
                         <p>Импорт оценок</p>
                     </ul>
                 </nav>

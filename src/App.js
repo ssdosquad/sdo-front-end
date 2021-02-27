@@ -7,7 +7,10 @@ import testSelection from './containers/TestSelection/testSelection';
 import Test from './containers/Test/test'
 import Auth from './containers/Auth/Auth'
 import Panel from './containers/Panel/Panel'
-import Connection from './containers/Connection/Connection'
+import Connection from './containers/Panel/Connection/Connection'
+import Modul from './containers/Panel/Modul/Modul'
+import Events from './containers/Panel/Events/Events'
+import Imports from './containers/Panel/Import/Import'
 
 class App extends Component {
   render() {
@@ -24,7 +27,9 @@ class App extends Component {
             <Route path="/auth" component={Auth} />
             <Route path="/panel" exact component={Panel}/>
             <Route path="/panel/connection" exact component={Connection}/>
-            <Route path="/panel/connection/as" exact component={Connection}/>
+            <Route path="/panel/module" exact component={Modul}/>
+            <Route path="/panel/events" exact component={Events}/>
+            <Route path="/panel/import" exact component={Imports}/>
           </Layout>
         </Switch>
       </React.Fragment>
