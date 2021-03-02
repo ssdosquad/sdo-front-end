@@ -5,6 +5,7 @@ import communication from './dvr-24px.svg'
 import training from './leaderboard-black-18dp.svg'
 import checklist from './find_in_page-black-18dp.svg'
 import shipping from './sim_card_download-black-18dp.svg'
+// import addStudents from './group_add-24px.svg'
 
 class Menu extends Component {
     render() {
@@ -27,6 +28,10 @@ class Menu extends Component {
                         <Link to="/panel/import"><img src={shipping} alt="Импорт оценок" title="Импорт оценок" /></Link>
                         <p>Импорт оценок</p>
                     </ul>
+                    {/* <ul>
+                        <Link to="/panel/add-students"><img src={addStudents} alt="Импорт оценок" title="Импорт оценок" /></Link>
+                        <p>Добавить учеников</p>
+                    </ul> */}
                 </nav>
             </div>
         )

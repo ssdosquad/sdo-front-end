@@ -49,15 +49,6 @@ class Events extends Component {
                     }
                 }
             }
-
-
-            // for (var i of resultSpan){
-            //     if (i.textContent == 1){
-            //         i.style.background= "#00FF00"
-            //     } else if (i.textContent == 0){
-            //         i.style.background= "#FF0000"
-            //     }
-            // }
         }
 
         return (

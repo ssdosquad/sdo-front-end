@@ -45,11 +45,17 @@
     margin: auto;
 } */
 
-.Module .answers {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+.Module .answers p {
+    margin-top: 5px;
 }
 
-.Module .answers p {
-    margin: auto;
+.Module .changeQuestion {
+    height: 30px;
+    margin-right: 10px;
+    background: #05AFF2;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    float: right;
 }

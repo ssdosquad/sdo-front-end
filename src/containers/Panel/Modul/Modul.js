@@ -118,6 +118,7 @@ class Modul extends Component {
                                 return (
                                     <div className="item" key={index++}>
                                         <p style={{textAlign: 'center'}} key={index++}>Задание №{question.numberQuestions} Вариант {question.varQuestion}</p>
+                                        <button className="changeQuestion">Изменить вопрос</button>
                                         <p key={index++}>{question.textQuestion}</p>
                                         {
                                             question.imgQuestion != null

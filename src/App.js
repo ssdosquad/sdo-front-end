@@ -11,6 +11,7 @@ import Connection from './containers/Panel/Connection/Connection'
 import Modul from './containers/Panel/Modul/Modul'
 import Events from './containers/Panel/Events/Events'
 import Imports from './containers/Panel/Import/Import'
+import AddStudents from './containers/Panel/AddStudents/AddStudents'
 
 class App extends Component {
   render() {
@@ -30,6 +31,7 @@ class App extends Component {
             <Route path="/panel/module" exact component={Modul}/>
             <Route path="/panel/events" exact component={Events}/>
             <Route path="/panel/import" exact component={Imports}/>
+            <Route path="/panel/add-students" exact component={AddStudents}/>
           </Layout>
         </Switch>
       </React.Fragment>
