@@ -103,9 +103,9 @@ class test extends Component {
             }, 1000);
         } else {
             setTimeout(() => {
-                window.location.reload()
+                // window.location.reload()
             }, 1300);
-        }
+        }        
    }
     render() {
         const Completionist = () => {
@@ -135,8 +135,10 @@ class test extends Component {
                 document.body.style.overflow = 'hidden'
                 return (
                     <div className="render">
+                        <div className='content'>
                         <h1>Подождите загрузку</h1>
                         <Loader />
+                        </div>
                     </div>
                 )
             }
@@ -161,7 +163,7 @@ class test extends Component {
                             this.state.questions.map((quiz, index) => {
                                 return (
                                     <div className="startTestItem" key={index++} >
-                                        {console.log(quiz)}
+                                        {/* {console.log(quiz)} */}
                                         <h1 key={index++} className="task">Задание №{quiz.questionNumber}</h1>
                                         <p key={index++} className="contentTask">{quiz.questionText}</p>
                                         <input key={index++} type="radio"  name="answe_1" required/>

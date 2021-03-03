@@ -26,6 +26,10 @@
     width: 300px;
 }
 
+.Auth form input::placeholder {
+    color: #fff;
+}
+
 .Auth form a {
     margin: auto;
 }

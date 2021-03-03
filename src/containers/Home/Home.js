@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom';
 import './Home.css'
@@ -5,14 +6,7 @@ import './Home.css'
 
 class Home extends Component {
     state = {
-        groupName: [
-            {name: '1пк1', id: '1'},
-            {name: '2пк1', id: '2'},
-            {name: '3пк1', id: '3'},
-            {name: '4пк1', id: '4'},
-            {name: '1пк2', id: '5'},
-            {name: '2пк2', id: '6'}
-        ],
+        groupName: '',
         fullName: [
             {name: 'Иванов Иван Иванович'},
             {name: 'Алексеев Алексей Алексеевич'},
@@ -20,8 +14,24 @@ class Home extends Component {
         ],
         activAccount: []
     }
+    
+    componentDidMount() {
+        axios.get('http://localhost:3000/sdo/studentChoice?type=group')
+        .then(response => {
+            console.log(response.data.data.groups);
+            // response.data.data.groups.map((group) => {
+            //     this.setState({
+            //         groupName: group.name
+            //     })
+            // })
+            
+        }).catch(err => {
+            console.log(err); 
+        })
+    }
 
     render() {
+        console.log(this.state.groupName);
         // console.log('Имя: ' + this.props.name, 'Группа: ' + this.props.group, 'время таймера: ' + this.props.timer);
         function groupChangeHandler(e) {
             console.log(e.target.value);
@@ -38,11 +48,12 @@ class Home extends Component {
                 <form id="form" >
                     <select name="" id="groupName" defaultValue={'DEFAULT'} onChange={groupChangeHandler}>
                         <option value='DEFAULT'  disabled="disabled">Выберите свой класс</option>
-                        {this.state.groupName.map((group, index) => {
+                        {/* {this.state.groupName.map((group, index) => {
                             return (
                                 <option value={group.name}  key={index}>{group.name}</option>
                             )
-                        })}
+                        })} */}
+                        <option>{this.state.groupName}</option>
                     </select>
                     <select name="" id="fullName" defaultValue={'DEFAULT'} onChange={nameChangeHandler}>
                         <option value='DEFAULT' disabled="disabled">Выберите ФИО</option>

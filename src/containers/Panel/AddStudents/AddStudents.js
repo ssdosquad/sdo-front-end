@@ -19,7 +19,7 @@ class AddStudents extends Component {
                                     <input placeholder="Отчество"/>
                                     {/* <img src={plus}/> */}
                                     {/* {document.querySelectorAll('.onbutton').onclick = <Addinput/>} */}
-                                    <a className="onbutton">+</a>
+                                    {/* <a to="/" className="onbutton">+</a> */}
                                 </div>
                             </div>
                         </div>
