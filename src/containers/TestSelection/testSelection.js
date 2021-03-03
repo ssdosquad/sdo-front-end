@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import './testSelection.css'
 import Loader from '../../components/Loader/Loader'
+import { nanoid } from 'nanoid'
 
 class testSelection extends Component {
 
@@ -37,11 +38,11 @@ class testSelection extends Component {
                             ? <Loader />
                             :   this.state.tests.map((quiz, index) => {
                                     return (
-                                        <div className="testSelectionItem" key={index++}>
-                                            <Link to="/test" key={index++}>
-                                                <p key={index++}>Название предмета: <span className='spanInfo' key={index++}>{quiz.subjectName}</span></p>
-                                                <p key={index++}>Название теста: <span className='spanInfo' key={index++}>{quiz.testName}</span></p>
-                                                <p key={index++}>Время на выполнение: <span className='spanInfo' key={index++}><span id='time' key={index++}>{quiz.timeToComplete}</span> минут</span></p>
+                                        <div className="testSelectionItem" key={nanoid()}>
+                                            <Link to="/test" key={nanoid()}>
+                                                <p key={nanoid()}>Название предмета: <span className='spanInfo' key={nanoid()}>{quiz.subjectName}</span></p>
+                                                <p key={nanoid()}>Название теста: <span className='spanInfo' key={nanoid()}>{quiz.testName}</span></p>
+                                                <p key={nanoid()}>Время на выполнение: <span className='spanInfo' key={nanoid()}><span id='time' key={nanoid()}>{quiz.timeToComplete}</span> минут</span></p>
                                             </Link>
                                         </div>
                                     )

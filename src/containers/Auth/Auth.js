@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../../axios/axios';
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import classes from './Auth.module.css'
@@ -9,7 +9,7 @@ class Auth extends Component {
             var login = document.querySelector('.login').value
             var password = document.querySelector('.password').value
             console.log(login, password);
-            axios.get('http://localhost:3000/sdo/auth?login=' + login +'&password='+ password )
+            axios.get('/auth?login=' + login +'&password='+ password )
             .then(response => {
                 console.log(response.data);
             }).catch(err => {

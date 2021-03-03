@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Menu from '../../../components/menu/menu'
 import './AddStudents.css'
 // import plus from "./add_circle_outline-24px.svg"
@@ -17,9 +18,7 @@ class AddStudents extends Component {
                                     <input type="text" placeholder="Фамилия"/>
                                     <input placeholder="Имя"/>
                                     <input placeholder="Отчество"/>
-                                    {/* <img src={plus}/> */}
-                                    {/* {document.querySelectorAll('.onbutton').onclick = <Addinput/>} */}
-                                    {/* <a to="/" className="onbutton">+</a> */}
+                                    <Link to="/" className="onbutton">+</Link>
                                 </div>
                             </div>
                         </div>

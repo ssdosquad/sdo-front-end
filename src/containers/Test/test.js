@@ -3,6 +3,7 @@ import './test.css'
 import Header from '../../components/Header/Header'
 import Countdown from 'react-countdown'
 import Loader from '../../components/Loader/Loader'
+import { nanoid } from 'nanoid'
 
 class test extends Component {
 
@@ -105,7 +106,7 @@ class test extends Component {
             setTimeout(() => {
                 // window.location.reload()
             }, 1300);
-        }        
+        }
    }
     render() {
         const Completionist = () => {
@@ -160,20 +161,20 @@ class test extends Component {
                     </div>
                     <div className="startTestContent">
                         {
-                            this.state.questions.map((quiz, index) => {
+                            this.state.questions.map((quiz) => {
                                 return (
-                                    <div className="startTestItem" key={index++} >
+                                    <div className="startTestItem" key={nanoid()} >
                                         {/* {console.log(quiz)} */}
-                                        <h1 key={index++} className="task">Задание №{quiz.questionNumber}</h1>
-                                        <p key={index++} className="contentTask">{quiz.questionText}</p>
-                                        <input key={index++} type="radio"  name="answe_1" required/>
-                                        <label key={index++} htmlFor="">{quiz.answer1}</label><br/>
-                                        <input key={index++} type="radio"  name="answe_1" required/>
-                                        <label key={index++} htmlFor="">{quiz.answer2}</label><br/>
-                                        <input key={index++} type="radio"  name="answe_1" required/>
-                                        <label key={index++} htmlFor="">{quiz.answer3}</label><br/>
-                                        <input key={index++} type="radio"  name="answe_1" required/>
-                                        <label key={index++} htmlFor="">{quiz.answer4}</label><br/>
+                                        <h1 key={nanoid()} className="task">Задание №{quiz.questionNumber}</h1>
+                                        <p key={nanoid()} className="contentTask">{quiz.questionText}</p>
+                                        <input key={nanoid()} type="radio"  name="answe_1" required/>
+                                        <label key={nanoid()} htmlFor="">{quiz.answer1}</label><br/>
+                                        <input key={nanoid()} type="radio"  name="answe_1" required/>
+                                        <label key={nanoid()} htmlFor="">{quiz.answer2}</label><br/>
+                                        <input key={nanoid()} type="radio"  name="answe_1" required/>
+                                        <label key={nanoid()} htmlFor="">{quiz.answer3}</label><br/>
+                                        <input key={nanoid()} type="radio"  name="answe_1" required/>
+                                        <label key={nanoid()} htmlFor="">{quiz.answer4}</label><br/>
                                     </div>
                                 )
                             })

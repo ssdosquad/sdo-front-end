@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid'
 import React, { Component } from 'react'
 import Menu from '../../../components/menu/menu'
 import './Connection.css'
@@ -118,14 +119,14 @@ class Connection extends Component {
                         {
                             this.state.students.length === 0
                             ? <h1 className="noCon">Нет соединений</h1>
-                            : this.state.students.map((students, index) => {
+                            : this.state.students.map((students) => {
                                 return (
-                                    <div className="item" key={index++}>
-                                        <button className="confirmed" key={index++}>{students.status}</button>
-                                        <div style={{margin: "auto"}} key={index++}>
-                                            <p key={index++}>ФИО: <span className="fullName" key={index++}>{students.fullName}</span>, класс: <span className="class" key={index++}>{students.class}</span></p>
-                                            <p key={index++}>Результат: <span className="result" key={index++}>{students.result}</span></p>
-                                            <p key={index++}>{students.lastresult}</p>
+                                    <div className="item" key={nanoid()}>
+                                        <button className="confirmed" key={nanoid()}>{students.status}</button>
+                                        <div style={{margin: "auto"}} key={nanoid()}>
+                                            <p key={nanoid()}>ФИО: <span className="fullName" key={nanoid()}>{students.fullName}</span>, класс: <span className="class" key={nanoid()}>{students.class}</span></p>
+                                            <p key={nanoid()}>Результат: <span className="result" key={nanoid()}>{students.result}</span></p>
+                                            <p key={nanoid()}>{students.lastresult}</p>
                                         </div>
                                     </div>
                                 )

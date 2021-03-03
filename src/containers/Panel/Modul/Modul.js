@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Menu from '../../../components/menu/menu'
 import './Modul.css'
 import img from "../../../components/menu/dvr-24px.svg"
+import { nanoid } from 'nanoid'
 
 class Modul extends Component {
     state = {
@@ -116,23 +117,23 @@ class Modul extends Component {
                         {
                             this.state.questions.map((question, index) => {
                                 return (
-                                    <div className="item" key={index++}>
-                                        <p style={{textAlign: 'center'}} key={index++}>Задание №{question.numberQuestions} Вариант {question.varQuestion}</p>
+                                    <div className="item" key={nanoid()}>
+                                        <p style={{textAlign: 'center'}} key={nanoid()}>Задание №{question.numberQuestions} Вариант {question.varQuestion}</p>
                                         <button className="changeQuestion">Изменить вопрос</button>
-                                        <p key={index++}>{question.textQuestion}</p>
+                                        <p key={nanoid()}>{question.textQuestion}</p>
                                         {
                                             question.imgQuestion != null
-                                            ? <img src={question.imgQuestion} alt="" key={index++}/>
+                                            ? <img src={question.imgQuestion} alt="" key={nanoid()}/>
                                             : null
                                         }
                                         <p>Варианты ответов:</p>
-                                        <div className="answers" key={index++}>
-                                            <p key={index++}>{question.answer1}</p>
-                                            <p key={index++}>{question.answer2}</p>
-                                            <p key={index++}>{question.answer3}</p>
-                                            <p key={index++}>{question.answer4}</p>
+                                        <div className="answers" key={nanoid()}>
+                                            <p key={nanoid()}>{question.answer1}</p>
+                                            <p key={nanoid()}>{question.answer2}</p>
+                                            <p key={nanoid()}>{question.answer3}</p>
+                                            <p key={nanoid()}>{question.answer4}</p>
                                         </div>
-                                        <p key={index++}>Правильный ответ: {question.correctAnswer}</p>
+                                        <p key={nanoid()}>Правильный ответ: {question.correctAnswer}</p>
                                         <hr/>
                                     </div>
                                 )
