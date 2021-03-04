@@ -7,17 +7,18 @@ import './Home.css'
 class Home extends Component {
     state = {
         groupName: [],
-        fullName: []
+        fullName: [],
+        gid: 'DEFAULT'
     }
 
     componentDidMount() {
-        axios.get('/studentChoice?type=group')
+        axios.get('studentChoice?type=group')
         .then(response => {
             // console.log(response.data.data.groups);
             this.setState({
                 groupName: response.data.data.groups
             })
-            // console.log(this.state.groupName);
+            console.log(this.state.groupName);
         }).catch(err => {
             console.log(err);
         })
@@ -25,7 +26,8 @@ class Home extends Component {
 
     render() {
         const groupChangeHandler= (e) => {
-            axios.get('/studentChoice?type=student&gid='+ e.target.value)
+            // var gidFun = document.querySelector('#groupName').value
+            axios.get('studentChoice?type=student&gid='+ e.target.value)
             .then(response => {
                 // console.log(response.data.data.students);
                 this.setState({
@@ -36,6 +38,13 @@ class Home extends Component {
                 console.log(err);
             })
             // console.log(e.target.value);
+
+            // var qwe = document.querySelector('#groupName')
+            // qwe.value = e.target.value
+            this.setState({
+                gid: e.target.value
+            })
+            // console.log(qwe.value)
             document.querySelector('#fullName').style.display = 'block'
         }
 
@@ -47,7 +56,7 @@ class Home extends Component {
         return (
             <div className={'loginForTest'}>
                 <form id="form" >
-                    <select name="" id="groupName" defaultValue={'DEFAULT'} onChange={groupChangeHandler}>
+                    <select name="" id="groupName" value={this.state.gid} onChange={groupChangeHandler}>
                         <option value='DEFAULT'  disabled="disabled">Выберите свой класс</option>
                         {this.state.groupName.map((group) => {
                             return (
@@ -64,7 +73,6 @@ class Home extends Component {
                         })}
                     </select>
                     <Link to='/testSelection'><button>Войти</button></Link>
-
                 </form>
             </div>
         )
