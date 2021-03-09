@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './App.css'
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, withRouter} from 'react-router-dom'
 import Layout from './hoc/Layout/Layout'
 import Home from './containers/Home/Home'
 import testSelection from './containers/TestSelection/testSelection';
@@ -15,8 +15,14 @@ import AddStudents from './containers/Panel/AddStudents/AddStudents'
 import Logout from './components/Logout/Logout'
 import { connect } from 'react-redux'
 import AddUser from './containers/Panel/AddUser/AddUser'
+import { autoLogin } from './store/actions/Auth'
 
 class App extends Component {
+
+  componentDidMount() {
+    this.props.autoLogin()
+  }
+
   render() {
 
     let routes = (
@@ -64,4 +70,10 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(App)
+function mapDispatchToProps(dispatch) {
+  return {
+    autoLogin: () => dispatch(autoLogin())
+  }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))

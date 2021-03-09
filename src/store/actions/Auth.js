@@ -11,6 +11,7 @@ export function auth(login, password) {
         const expirationDate = new Date(new Date().getTime() + data.stime * 1000)
 
         localStorage.setItem('session', data.session)
+        localStorage.setItem('atype', data.atype)
         localStorage.setItem('expirationDate', expirationDate)
         // console.log(localStorage);
 
@@ -32,6 +33,24 @@ export function logout() {
     localStorage.removeItem('expirationDate')
     return {
         type: AUTH_LOGOUT
+    }
+}
+
+export function autoLogin() {
+    return dispatch => {
+        const session = localStorage.getItem('session')
+        const atype = localStorage.getItem('atype')
+        if (!session) {
+            dispatch(logout())
+        } else {
+            const expirationDate = new Date(localStorage.getItem('expirationDate'))
+            if (expirationDate <= new Date()) {
+                dispatch(logout())
+            } else {
+                dispatch(authSuccess(session, atype))
+                dispatch(authLogout((expirationDate.getTime() - new Date().getTime()) / 1000))
+            }
+        }
     }
 }
 
