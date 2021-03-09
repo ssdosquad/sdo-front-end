@@ -1,20 +1,18 @@
-import axios from '../../axios/axios';
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import classes from './Auth.module.css'
+import { connect } from 'react-redux';
+import { auth } from '../../store/actions/Auth';
 
 class Auth extends Component {
     render() {
         const auth = () => {
             var login = document.querySelector('.login').value
             var password = document.querySelector('.password').value
-            console.log(login, password);
-            axios.get('/auth?login=' + login +'&password='+ password )
-            .then(response => {
-                console.log(response.data);
-            }).catch(err => {
-                console.log(err); 
-            })
+            this.props.auth(
+                login,
+                password
+            )
         }
 
         return (
@@ -23,7 +21,7 @@ class Auth extends Component {
                     <form>
                         <input className='login' type="text" placeholder="Логин"/>
                         <input className='password' type="password" placeholder="Пароль"/>
-                        <Link to="/auth">
+                        <Link to="/panel">
                             <button onClick={auth}>Войти</button>
                         </Link>
                     </form>
@@ -33,4 +31,10 @@ class Auth extends Component {
     }
 }
 
-export default Auth
+function mapDispatchToProps(dispatch) {
+    return{
+        auth: (login, password) => dispatch(auth(login, password))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Auth)

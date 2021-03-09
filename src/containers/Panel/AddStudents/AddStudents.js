@@ -6,6 +6,11 @@ import './AddStudents.css'
 // import Addinput from './addinput'
 
 class AddStudents extends Component {
+
+    componentDidMount() {
+        document.title = 'Добавление учеников';
+    }
+
     render() {
         return (
             <React.Fragment>

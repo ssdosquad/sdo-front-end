@@ -83,6 +83,11 @@ class Modul extends Component {
             },
         ]
     }
+
+    componentDidMount() {
+        document.title = 'Просмотр тестов';
+    }
+
     render() {
         return (
             <React.Fragment>

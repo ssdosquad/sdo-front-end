@@ -83,6 +83,10 @@ class Imports extends Component {
         ]
     }
 
+    componentDidMount() {
+        document.title = 'Импорт вопросов';
+    }
+
     render() {
 
         const button = () => {

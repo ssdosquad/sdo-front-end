@@ -5,37 +5,96 @@ import communication from './dvr-24px.svg'
 import training from './leaderboard-black-18dp.svg'
 import checklist from './find_in_page-black-18dp.svg'
 import shipping from './sim_card_download-black-18dp.svg'
-// import addStudents from './group_add-24px.svg'
+import addStudents from './group_add-24px.svg'
+import addUser from './person_add-24px.svg'
+import { connect } from 'react-redux'
 
 class Menu extends Component {
     render() {
+        console.log(this.props.atype);
         return (
             <div className="Menu">
                 <nav>
-                    <ul>
-                        <Link to="/panel/connection"><img src={communication} alt="Подключенные устройства" title="Подключенные устройства" /></Link>
-                        <p>Подключенные устройства</p>
-                    </ul>
-                    <ul>
-                        <Link to="/panel/module"><img src={training} alt="модуль" title="Выбор модуля" /></Link>
-                        <p>Выбор модуля</p>
-                    </ul>
-                    <ul>
-                        <Link to="/panel/events"><img src={checklist} alt="Просмотр результатов" title="Просмотр результатов" /></Link>
-                        <p>Просмотр результатов</p>
-                    </ul>
-                    <ul>
-                        <Link to="/panel/import"><img src={shipping} alt="Импорт оценок" title="Импорт оценок" /></Link>
-                        <p>Импорт оценок</p>
-                    </ul>
-                    {/* <ul>
-                        <Link to="/panel/add-students"><img src={addStudents} alt="Импорт оценок" title="Импорт оценок" /></Link>
-                        <p>Добавить учеников</p>
-                    </ul> */}
+                    {
+                        this.props.atype == 'admin'
+                        ?
+                            <React.Fragment>
+                                <ul>
+                                    <Link to="/panel/connection"><img src={communication} alt="Подключенные устройства" title="Подключенные устройства" /></Link>
+                                    <p>Подключенные устройства</p>
+                                </ul>
+                                <ul>
+                                    <Link to="/panel/module"><img src={training} alt="модуль" title="Выбор модуля" /></Link>
+                                    <p>Выбор модуля</p>
+                                </ul>
+                                <ul>
+                                    <Link to="/panel/events"><img src={checklist} alt="Просмотр результатов" title="Просмотр результатов" /></Link>
+                                    <p>Просмотр результатов</p>
+                                </ul>
+                                <ul>
+                                    <Link to="/panel/import"><img src={shipping} alt="Импорт оценок" title="Импорт оценок" /></Link>
+                                    <p>Импорт оценок</p>
+                                </ul>
+                                <ul>
+                                    <Link to="/panel/add-students"><img src={addStudents} alt="Импорт оценок" title="Импорт оценок" /></Link>
+                                    <p>Добавить учеников</p>
+                                </ul>
+                                <ul>
+                                    <Link to="/panel/add-user"><img src={addUser} alt="Импорт оценок" title="Импорт оценок" /></Link>
+                                    <p>Добавить пользователя</p>
+                                </ul>
+                            </React.Fragment>
+                        : null
+                    }
+                    {
+                        this.props.atype == 'methodist'
+                        ?
+                            <React.Fragment>
+                                <ul>
+                                    <Link to="/panel/module"><img src={training} alt="модуль" title="Выбор модуля" /></Link>
+                                    <p>Выбор модуля</p>
+                                </ul>
+                                <ul>
+                                    <Link to="/panel/events"><img src={checklist} alt="Просмотр результатов" title="Просмотр результатов" /></Link>
+                                    <p>Просмотр результатов</p>
+                                </ul>
+                                <ul>
+                                    <Link to="/panel/import"><img src={shipping} alt="Импорт оценок" title="Импорт оценок" /></Link>
+                                    <p>Импорт модуля</p>
+                                </ul>
+                            </React.Fragment>
+                        : null
+                    }
+                    {
+                        this.props.atype == 'teacher'
+                        ?
+                            <React.Fragment>
+                                <ul>
+                                    <Link to="/panel/connection"><img src={communication} alt="Подключенные устройства" title="Подключенные устройства" /></Link>
+                                    <p>Подключенные устройства</p>
+                                </ul>
+                                <ul>
+                                    <Link to="/panel/module"><img src={training} alt="модуль" title="Выбор модуля" /></Link>
+                                    <p>Выбор модуля</p>
+                                </ul>
+                                <ul>
+                                    <Link to="/panel/events"><img src={checklist} alt="Просмотр результатов" title="Просмотр результатов" /></Link>
+                                    <p>Просмотр результатов</p>
+                                </ul>
+                            </React.Fragment>
+                        : null
+                    }
                 </nav>
             </div>
         )
     }
 }
 
-export default Menu
+function mapStateToProps(state) {
+    return {
+        isAuthenticated: !!state.auth.session,
+        atype: state.auth.atype
+    }
+}
+
+export default connect(mapStateToProps)(Menu)

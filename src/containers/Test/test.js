@@ -95,6 +95,7 @@ class test extends Component {
         ]
     }
     componentDidMount= function(){
+        document.title = 'Тест';
         var tests = document.querySelectorAll('.startTestItem')
 
         if (tests.length <= this.state.numberOfQuestions){

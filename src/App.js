@@ -12,31 +12,56 @@ import Modul from './containers/Panel/Modul/Modul'
 import Events from './containers/Panel/Events/Events'
 import Imports from './containers/Panel/Import/Import'
 import AddStudents from './containers/Panel/AddStudents/AddStudents'
+import Logout from './components/Logout/Logout'
+import { connect } from 'react-redux'
+import AddUser from './containers/Panel/AddUser/AddUser'
 
 class App extends Component {
   render() {
 
-    return (
-      <React.Fragment>
+    let routes = (
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/testSelection" component={testSelection} />
+        <Route path="/test" exact>
+          <Test />
+        </Route>
+        <Route path="/auth" component={Auth} />
+      </Switch>
+    )
+
+    if (this.props.isAuthenticated) {
+      routes = (
         <Switch>
-          <Layout>
-            <Route path="/" exact component={Home} />
-            <Route path="/testSelection" component={testSelection} />
-            <Route path="/test" exact>
-              <Test />
-            </Route>
-            <Route path="/auth" component={Auth} />
-            <Route path="/panel" exact component={Panel}/>
-            <Route path="/panel/connection" exact component={Connection}/>
-            <Route path="/panel/module" exact component={Modul}/>
-            <Route path="/panel/events" exact component={Events}/>
-            <Route path="/panel/import" exact component={Imports}/>
-            <Route path="/panel/add-students" exact component={AddStudents}/>
-          </Layout>
+          <Route path="/" exact component={Home} />
+          <Route path="/testSelection" component={testSelection} />
+          <Route path="/test" exact>
+            <Test />
+          </Route>
+          <Route path="/panel" exact component={Panel}/>
+          <Route path="/panel/connection" component={Connection}/>
+          <Route path="/panel/module" component={Modul}/>
+          <Route path="/panel/events" component={Events}/>
+          <Route path="/panel/import" component={Imports}/>
+          <Route path="/panel/add-students" component={AddStudents}/>
+          <Route path="/panel/add-user" component={AddUser}/>
+          <Route path="/logout" component={Logout} />
         </Switch>
-      </React.Fragment>
+      )
+    }
+
+    return (
+        <Layout>
+          {routes}
+        </Layout>
     );
   }
 }
 
-export default App
+function mapStateToProps(state) {
+  return {
+    isAuthenticated: !!state.auth.session
+  }
+}
+
+export default connect(mapStateToProps)(App)

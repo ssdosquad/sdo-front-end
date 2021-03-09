@@ -8,6 +8,10 @@ class Events extends Component {
         display: false
     }
 
+    componentDidMount() {
+        document.title = 'Просмотр оценок';
+    }
+
     render() {
 
         // Показ/скрытие доп. опций

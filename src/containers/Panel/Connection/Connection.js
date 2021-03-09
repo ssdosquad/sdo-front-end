@@ -92,6 +92,11 @@ class Connection extends Component {
             }
         ]
     }
+
+    componentDidMount() {
+        document.title = 'Подключенные устройства';
+    }
+
     render() {
 
         const stateNull = () => {

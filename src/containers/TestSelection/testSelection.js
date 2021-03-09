@@ -24,6 +24,11 @@ class testSelection extends Component {
             }
         ],
     }
+
+    componentDidMount() {
+        document.title = 'Выбор теста';
+    }
+
     render() {
         return (
             <React.Fragment>

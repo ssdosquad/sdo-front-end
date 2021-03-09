@@ -12,9 +12,9 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        axios.get('studentChoice?type=group')
+        document.title = 'Авторизация учеников';
+        axios.get('student/choice?type=group')
         .then(response => {
-            // console.log(response.data.data.groups);
             this.setState({
                 groupName: response.data.data.groups
             })
@@ -26,30 +26,22 @@ class Home extends Component {
 
     render() {
         const groupChangeHandler= (e) => {
-            // var gidFun = document.querySelector('#groupName').value
-            axios.get('studentChoice?type=student&gid='+ e.target.value)
+            axios.get('student/choice?type=student&gid='+ e.target.value)
             .then(response => {
-                // console.log(response.data.data.students);
                 this.setState({
                     fullName: response.data.data.students
                 })
-                // console.log(this.state.fullName);
             }).catch(err => {
                 console.log(err);
             })
-            // console.log(e.target.value);
 
-            // var qwe = document.querySelector('#groupName')
-            // qwe.value = e.target.value
             this.setState({
                 gid: e.target.value
             })
-            // console.log(qwe.value)
             document.querySelector('#fullName').style.display = 'block'
         }
 
         const nameChangeHandler = (e) => {
-            // console.log(e.target.value);
             document.querySelector('button').style.display = 'block'
         }
 
