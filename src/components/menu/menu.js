@@ -7,6 +7,7 @@ import checklist from './find_in_page-black-18dp.svg'
 import shipping from './sim_card_download-black-18dp.svg'
 import addStudents from './group_add-24px.svg'
 import addUser from './person_add-24px.svg'
+import appraisals from './baseline_sim_card_download_black_48dp.png'
 import { connect } from 'react-redux'
 
 class Menu extends Component {
@@ -32,8 +33,12 @@ class Menu extends Component {
                                     <p>Просмотр результатов</p>
                                 </ul>
                                 <ul>
-                                    <Link to="/panel/import"><img src={shipping} alt="Импорт оценок" title="Импорт оценок" /></Link>
-                                    <p>Импорт оценок</p>
+                                    <Link to="/panel/import"><img src={shipping} alt="Импорт модуля" title="Импорт модуля" /></Link>
+                                    <p>Импорт модуля</p>
+                                </ul>
+                                <ul>
+                                    <Link to="/panel/export-estimates"><img src={appraisals} alt="Экспортировать оценок" title="Экспортировать оценок" /></Link>
+                                    <p>Экспортировать оценок</p>
                                 </ul>
                                 <ul>
                                     <Link to="/panel/add-students"><img src={addStudents} alt="Импорт оценок" title="Импорт оценок" /></Link>

@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header'
 import Countdown from 'react-countdown'
 import Loader from '../../components/Loader/Loader'
 import { nanoid } from 'nanoid'
+import { connect } from 'react-redux'
 
 class test extends Component {
 
@@ -149,8 +150,8 @@ class test extends Component {
         return (
             <div className="startTest">
                 <Header
-                    name={this.state.name}
-                    group={this.state.group}
+                    name={this.props.name}
+                    group={this.props.group}
                 />
                 <form>
                     <div className="startTestInfo">
@@ -187,4 +188,11 @@ class test extends Component {
     }
 }
 
-export default test
+function mapStateToProps(state) {
+    return {
+        name: state.student.name,
+        group: state.student.group
+    }
+}
+
+export default connect(mapStateToProps)(test)

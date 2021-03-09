@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './App.css'
-import {Route, Switch, withRouter} from 'react-router-dom'
+import {Redirect, Route, Switch, withRouter} from 'react-router-dom'
 import Layout from './hoc/Layout/Layout'
 import Home from './containers/Home/Home'
 import testSelection from './containers/TestSelection/testSelection';
@@ -16,6 +16,7 @@ import Logout from './components/Logout/Logout'
 import { connect } from 'react-redux'
 import AddUser from './containers/Panel/AddUser/AddUser'
 import { autoLogin } from './store/actions/Auth'
+import ExportEstimates from './containers/Panel/ExportEstimates/ExportEstimates'
 
 class App extends Component {
 
@@ -49,6 +50,7 @@ class App extends Component {
           <Route path="/panel/module" component={Modul}/>
           <Route path="/panel/events" component={Events}/>
           <Route path="/panel/import" component={Imports}/>
+          <Route path="/panel/export-estimates" component={ExportEstimates}/>
           <Route path="/panel/add-students" component={AddStudents}/>
           <Route path="/panel/add-user" component={AddUser}/>
           <Route path="/logout" component={Logout} />

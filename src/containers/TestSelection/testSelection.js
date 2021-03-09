@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header'
 import './testSelection.css'
 import Loader from '../../components/Loader/Loader'
 import { nanoid } from 'nanoid'
+import { connect } from 'react-redux'
 
 class testSelection extends Component {
 
@@ -34,8 +35,8 @@ class testSelection extends Component {
             <React.Fragment>
                 <div className="testSelection">
                     <Header
-                        name={this.state.name}
-                        group={this.state.group}
+                        name={this.props.name}
+                        group={this.props.group}
                     />
                     <div className="testSelectionContent">
                         {
@@ -60,4 +61,11 @@ class testSelection extends Component {
     }
 }
 
-export default testSelection
+function mapStateToProps(state) {
+    return {
+        name: state.student.name,
+        group: state.student.group
+    }
+}
+
+export default connect(mapStateToProps)(testSelection)

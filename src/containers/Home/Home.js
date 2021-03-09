@@ -3,6 +3,8 @@ import { nanoid } from 'nanoid';
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom';
 import './Home.css'
+import { connect } from 'react-redux';
+import { student } from '../../store/actions/Student';
 
 class Home extends Component {
     state = {
@@ -10,6 +12,7 @@ class Home extends Component {
         fullName: [],
         gid: 'DEFAULT'
     }
+    
 
     componentDidMount() {
         document.title = 'Авторизация учеников';
@@ -18,7 +21,6 @@ class Home extends Component {
             this.setState({
                 groupName: response.data.data.groups
             })
-            console.log(this.state.groupName);
         }).catch(err => {
             console.log(err);
         })
@@ -45,6 +47,22 @@ class Home extends Component {
             document.querySelector('button').style.display = 'block'
         }
 
+        const Vhod = () => {
+            var groupEl = document.getElementById("groupName")
+            var nameEl = document.getElementById("fullName")
+
+            var group = groupEl.options[groupEl.selectedIndex].text
+            var name = nameEl.options[nameEl.selectedIndex].text
+
+            var gid = document.querySelector('#groupName').value
+
+            this.props.student (
+                name,
+                group,
+                gid
+            )
+        }
+
         return (
             <div className={'loginForTest'}>
                 <form id="form" >
@@ -64,11 +82,18 @@ class Home extends Component {
                             )
                         })}
                     </select>
-                    <Link to='/testSelection'><button>Войти</button></Link>
+                    <Link to='/testSelection' onClick={Vhod}><button>Войти</button></Link>
                 </form>
             </div>
         )
     }
 }
 
-export default Home
+
+function mapDispathToProps(dispatch) {
+    return {
+        student: (name, group, gid) => dispatch(student(name, group, gid))
+    }
+}
+
+export default connect(null, mapDispathToProps)(Home)
