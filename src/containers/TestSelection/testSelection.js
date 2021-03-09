@@ -41,8 +41,11 @@ class testSelection extends Component {
                     <div className="testSelectionContent">
                         {
                             this.state.loading
-                            ? <Loader />
-                            :   this.state.tests.map((quiz, index) => {
+                            ? <React.Fragment>
+                                <h1 style={{margin: 'auto', marginBottom: '20px'}}>Подождите загрузку</h1>
+                                <Loader />
+                            </React.Fragment>
+                            :   this.state.tests.map((quiz) => {
                                     return (
                                         <div className="testSelectionItem" key={nanoid()}>
                                             <Link to="/test" key={nanoid()}>
