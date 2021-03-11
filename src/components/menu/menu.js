@@ -8,6 +8,7 @@ import shipping from './sim_card_download-black-18dp.svg'
 import addStudents from './group_add-24px.svg'
 import addUser from './person_add-24px.svg'
 import appraisals from './baseline_sim_card_download_black_48dp.png'
+import editStudent from './icons8-редактировать-пользователя-женщину-64.png'
 import { connect } from 'react-redux'
 
 class Menu extends Component {
@@ -46,6 +47,10 @@ class Menu extends Component {
                                 <ul>
                                     <Link to="/panel/add-user"><img src={addUser} alt="Импорт оценок" title="Импорт оценок" /></Link>
                                     <p>Добавить пользователя</p>
+                                </ul>
+                                <ul>
+                                    <Link to="/panel/edit-student"><img src={editStudent} alt="Редактировать ученика" title="Редактировать ученика" /></Link>
+                                    <p>Редактировать ученика</p>
                                 </ul>
                             </React.Fragment>
                         : null

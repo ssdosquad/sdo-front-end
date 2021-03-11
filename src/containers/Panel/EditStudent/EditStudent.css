@@ -1,0 +1,28 @@
+.EditStudent {
+    height: 100%;
+    margin: 25px;
+    margin-left: 97px;
+    padding: 10px;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    min-width: min-content;
+}
+
+.EditStudent .editStudentInput {
+    display: grid;
+    margin-top: 10px;
+}
+
+.EditStudent .editStudentInput input {
+    margin-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background: #29a8df;
+    color: #fff;
+    padding: 5px 10px 3px 5px;
+}
+
+.EditStudent .editStudentInput input::placeholder {
+    color: #fff
+}

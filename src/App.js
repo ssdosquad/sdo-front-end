@@ -18,6 +18,7 @@ import AddUser from './containers/Panel/AddUser/AddUser'
 import { autoLogin } from './store/actions/Auth'
 import ExportEstimates from './containers/Panel/ExportEstimates/ExportEstimates'
 import { autoLoginStudent } from './store/actions/Student'
+import EditStudent from './containers/Panel/EditStudent/EditStudent'
 
 class App extends Component {
 
@@ -52,6 +53,7 @@ class App extends Component {
           <Route path="/panel/add-students" component={AddStudents}/>
           <Route path="/panel/add-user" component={AddUser}/>
           <Route path="/logout" component={Logout} />
+          <Route path="/panel/edit-student" component={EditStudent} />
         </Switch>
       )
     }
