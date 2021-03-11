@@ -59,6 +59,7 @@ class Events extends Component {
             <React.Fragment>
                 <Menu/>
                 <div className="Events">
+                    <h1>Просмотр результатов</h1>
                     <div className="block">
                         <div className="leftBlock">
                             <p>Провести выбор по:</p>

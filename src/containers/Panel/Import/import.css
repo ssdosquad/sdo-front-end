@@ -9,6 +9,12 @@
     min-width: min-content;
 }
 
+.import h1 {
+    margin: auto;
+    margin-bottom: 20px;
+    width: max-content;
+}
+
 .file {
     display: flex;
 }

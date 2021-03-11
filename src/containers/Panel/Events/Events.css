@@ -9,6 +9,12 @@
     min-width: min-content;
 }
 
+.Events h1 {
+    margin: auto;
+    margin-bottom: 20px;
+    width: max-content;
+}
+
 .Events .block {
     display: flex;
 }

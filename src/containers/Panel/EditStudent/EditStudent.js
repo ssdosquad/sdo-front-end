@@ -90,22 +90,25 @@ class EditStudent extends Component {
             <React.Fragment>
                 <Menu />
                 <div className="EditStudent">
-                    <select name="" id="groupName" value={this.state.gid} onChange={groupChangeHandler}>
-                        <option value='DEFAULT'  disabled="disabled">Выберите свой класс</option>
-                        {this.state.groupName.map((group) => {
-                            return (
-                                <option value={group.id}  key={nanoid()}>{group.name}</option>
-                            )
-                        })}
-                    </select>
-                    <select name="" id="fullName" defaultValue="DEFAULT" onChange={nameChangeHandler}>
-                        <option value='DEFAULT'  disabled="disabled">Выберите ФИО</option>
-                        {this.state.fullName.map((fullname) => {
-                            return (
-                                <option value={fullname.id} key={nanoid()}>{fullname.lastname + ' '+ fullname.firstname + ' ' + fullname.middlename}</option>
-                            )
-                        })}
-                    </select>
+                    <h1>Редактирование ученика</h1>
+                    <div className="selectorStudent" >
+                        <select name="" id="groupName" value={this.state.gid} onChange={groupChangeHandler}>
+                            <option value='DEFAULT'  disabled="disabled">Выберите свой класс</option>
+                            {this.state.groupName.map((group) => {
+                                return (
+                                    <option value={group.id}  key={nanoid()}>{group.name}</option>
+                                )
+                            })}
+                        </select>
+                        <select name="" id="fullName" defaultValue="DEFAULT" onChange={nameChangeHandler}>
+                            <option value='DEFAULT'  disabled="disabled">Выберите ФИО</option>
+                            {this.state.fullName.map((fullname) => {
+                                return (
+                                    <option value={fullname.id} key={nanoid()}>{fullname.lastname + ' '+ fullname.firstname + ' ' + fullname.middlename}</option>
+                                )
+                            })}
+                        </select>
+                    </div>
                     <div className="editStudentInput">
                         <input type='text' className="lastname" placeholder="Фамилия" />
                         <input type='text' className="firstname" placeholder="Имя" />

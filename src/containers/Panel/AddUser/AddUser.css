@@ -1,20 +1,25 @@
 .AddUser {
-    height: 100%;
-    margin: 25px;
-    margin-left: 97px;
-    padding: 10px;
+    height: max-content;
+    margin: auto;
+    padding: 20px 50px;
     background: #fff;
     border: 2px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     min-width: min-content;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.AddUser h1 {
+    margin: auto;
+    margin-bottom: 20px;
 }
 
 .AddUser form {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 80%;
     margin: auto;
 }
 

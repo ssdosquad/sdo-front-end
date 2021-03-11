@@ -40,6 +40,7 @@ class AddUser extends Component {
             <React.Fragment>
                 <Menu/>
                 <div className="AddUser">
+                    <h1>Добавление нового ученика</h1>
                     <form id="createUser" className="createUser" >
                         <input className="lastname" placeholder='Фамилия'/>
                         <input className="firstname" placeholder='Имя'/>

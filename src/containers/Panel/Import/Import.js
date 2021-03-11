@@ -97,6 +97,7 @@ class Imports extends Component {
             <React.Fragment>
                 <Menu/>
                 <div className="import">
+                    <h1>Импорт вопросов</h1>
                     <div className="file">
                         <input type="file" name="file" id="file" className="inputfile" />
                         <label htmlFor="file">
