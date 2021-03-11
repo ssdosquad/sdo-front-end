@@ -5,6 +5,11 @@ import { connect } from 'react-redux';
 import { auth } from '../../store/actions/Auth';
 
 class Auth extends Component {
+
+    componentDidMount() {
+        document.title = 'Авторизация пользователся';
+    }
+
     render() {
         const auth = () => {
             var login = document.querySelector('.login').value

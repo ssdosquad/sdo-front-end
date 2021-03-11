@@ -31,6 +31,7 @@ export function authLogout(time) {
 export function logout() {
     localStorage.removeItem('session')
     localStorage.removeItem('expirationDate')
+    localStorage.removeItem('atype')
     return {
         type: AUTH_LOGOUT
     }

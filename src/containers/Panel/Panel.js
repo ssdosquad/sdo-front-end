@@ -9,7 +9,6 @@ class Panel extends Component {
     }
 
     render() {
-        console.log(this.props);
         return (
             <React.Fragment>
                 <Menu />

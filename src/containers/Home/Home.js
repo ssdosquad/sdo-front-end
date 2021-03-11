@@ -1,10 +1,10 @@
 import axios from '../../axios/axios';
 import { nanoid } from 'nanoid';
 import React, {Component} from 'react'
-import { Link } from 'react-router-dom';
 import './Home.css'
 import { connect } from 'react-redux';
 import { student } from '../../store/actions/Student';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
     state = {
@@ -30,6 +30,7 @@ class Home extends Component {
         const groupChangeHandler= (e) => {
             axios.get('student/choice?type=student&gid='+ e.target.value)
             .then(response => {
+                // console.log(response.data.data);
                 this.setState({
                     fullName: response.data.data.students
                 })
@@ -47,7 +48,8 @@ class Home extends Component {
             document.querySelector('button').style.display = 'block'
         }
 
-        const Vhod = () => {
+        const Vhod = (e) => {
+            // e.preventDefault()
             var groupEl = document.getElementById("groupName")
             var nameEl = document.getElementById("fullName")
 
@@ -55,11 +57,13 @@ class Home extends Component {
             var name = nameEl.options[nameEl.selectedIndex].text
 
             var gid = document.querySelector('#groupName').value
+            var uid = document.querySelector('#fullName').value
 
             this.props.student (
                 name,
                 group,
-                gid
+                gid,
+                uid
             )
         }
 
@@ -92,7 +96,7 @@ class Home extends Component {
 
 function mapDispathToProps(dispatch) {
     return {
-        student: (name, group, gid) => dispatch(student(name, group, gid))
+        student: (name, group, gid, uid) => dispatch(student(name, group, gid, uid))
     }
 }
 

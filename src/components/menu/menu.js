@@ -12,7 +12,6 @@ import { connect } from 'react-redux'
 
 class Menu extends Component {
     render() {
-        console.log(this.props.atype);
         return (
             <div className="Menu">
                 <nav>
