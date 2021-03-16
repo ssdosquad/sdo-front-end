@@ -9,6 +9,56 @@
     min-width: min-content;
 }
 
-.AddStudents form input::placeholder {
-    color: #000;
+.AddStudents h1 {
+    margin: auto;
+    margin-bottom: 20px;
+    width: max-content;
+}
+
+.AddStudents form {
+    display: grid;
+}
+
+.AddStudents form .content {
+    width: 100%;
+    margin: auto;
+}
+
+.AddStudents form .content .item {
+    display: flex;
+    width: max-content;
+    margin: auto;
+}
+
+.AddStudents form .content .item input {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-radius: 10px;
+    background: #29a8df;
+    color: #fff;
+    padding: 5px 10px 3px 5px;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.AddStudents form .content .item input:last-child {
+    margin-right: 0;
+}
+
+.AddStudents form .content .item input::placeholder {
+    color: #fff;
+}
+
+.AddStudents form button {
+    border: 0;
+    border-radius: 10px;
+    background: #04BF10;
+    color: #fff;
+    height: 30px;
+    width: max-content;
+    font-size: 18px;
+    margin: auto;
+    padding: 5px 20px;
+    cursor: pointer;
 }

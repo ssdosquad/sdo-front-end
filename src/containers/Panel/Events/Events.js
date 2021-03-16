@@ -44,10 +44,10 @@ class Events extends Component {
             var resultTd = document.querySelectorAll('.resultTd')
             for (var m of resultSpan){
                 for (var i of resultTd){
-                    if (i.textContent == 1){
+                    if (i.textContent === 1){
                         i.style.background= "#00FF00"
                         m.style.visibility= "hidden";
-                    } else if (i.textContent == 0){
+                    } else if (i.textContent === 0){
                         i.style.background= "#FF0000"
                         m.style.visibility= "hidden";
                     }

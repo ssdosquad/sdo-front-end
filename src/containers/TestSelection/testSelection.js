@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import './testSelection.css'
 import Loader from '../../components/Loader/Loader'
@@ -36,7 +36,7 @@ class testSelection extends Component {
             axios.get('/student/choice?type=signout&studkey=' + this.props.sessionStudent)
             .then(response => {
                 console.log(response.data);
-                if (response.data.type == 'success') {
+                if (response.data.type === 'success') {
                     localStorage.removeItem('sessionStudent')
                     localStorage.removeItem('fullName')
                     localStorage.removeItem('group')

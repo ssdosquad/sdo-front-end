@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import Menu from '../../../components/menu/menu'
 import './AddStudents.css'
 // import plus from "./add_circle_outline-24px.svg"
@@ -16,15 +15,158 @@ class AddStudents extends Component {
             <React.Fragment>
                 <Menu/>
                 <div className="AddStudents">
+                    <h1>Добавление учеников</h1>
                     <form>
-                        <div className="name">
-                            <div className="content">
-                                <div className="item">
-                                    <input type="text" placeholder="Фамилия"/>
-                                    <input placeholder="Имя"/>
-                                    <input placeholder="Отчество"/>
-                                    <Link to="/" className="onbutton">+</Link>
-                                </div>
+                        <div className="content">
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
+                            </div>
+                            <div className="item">
+                                <input type="text" placeholder="Фамилия"/>
+                                <input placeholder="Имя"/>
+                                <input placeholder="Отчество"/>
                             </div>
                         </div>
                         <button>Добавить</button>

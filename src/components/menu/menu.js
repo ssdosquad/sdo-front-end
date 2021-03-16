@@ -17,7 +17,7 @@ class Menu extends Component {
             <div className="Menu">
                 <nav>
                     {
-                        this.props.atype == 'admin'
+                        this.props.atype === 'admin'
                         ?
                             <React.Fragment>
                                 <ul>
@@ -56,7 +56,7 @@ class Menu extends Component {
                         : null
                     }
                     {
-                        this.props.atype == 'methodist'
+                        this.props.atype === 'methodist'
                         ?
                             <React.Fragment>
                                 <ul>
@@ -75,7 +75,7 @@ class Menu extends Component {
                         : null
                     }
                     {
-                        this.props.atype == 'teacher'
+                        this.props.atype === 'teacher'
                         ?
                             <React.Fragment>
                                 <ul>
